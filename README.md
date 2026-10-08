@@ -14,18 +14,22 @@ A **local-first Windows workspace** designed to bring task orchestration, indepe
 
 ---
 
-> **Status: desktop preview in development.** The Windows app shell, BigBoss popup, and local workspace metadata tasks are available. AI execution, Cute Boss AI, Telegram, and language switching are not implemented. The diagrams describe the target design. As of October 8, 2026, version 0.1.1 is a draft; check Releases for published builds.
+> **Status: desktop preview in development.** The Windows app shell, BigBoss popup, local workspace tasks, and a basic AI chat task (your own API key, stored encrypted on this PC) are available. Cute Boss AI, Telegram, full agent orchestration, and language switching are not implemented yet. The diagrams describe the target design.
 
 ## Download and installation
 
-Visit [GitHub Releases](https://github.com/bentarofficial/bigspy-ai-connect-release/releases) for published builds and version-specific notes. Draft releases are not publicly available.
+<!-- release-downloads:start -->
+**Latest release: v0.1.5** — Windows x64 preview, unsigned · [Release notes](https://github.com/bentarofficial/bigspy-ai-connect-release/releases/tag/v0.1.5) · [All releases](https://github.com/bentarofficial/bigspy-ai-connect-release/releases)
 
-| Package | Usage |
-| :--- | :--- |
-| **Setup.exe** | Install the Windows application. Use the installer for in-app updates in versions that support the updater. |
-| **Portable** | Run directly for evaluation. Use the installer for the in-app update workflow. |
+| Package | Download | Size | Usage |
+| :--- | :--- | :--- | :--- |
+| **Setup.exe** | [`BIGSPY-AI-Connect-0.1.5-x64-Setup.exe`](https://github.com/bentarofficial/bigspy-ai-connect-release/releases/download/v0.1.5/BIGSPY-AI-Connect-0.1.5-x64-Setup.exe) | 106.6 MB | Install the Windows application. Supports in-app updates (Settings → Updates). |
+| **Portable** | [`BIGSPY-AI-Connect-0.1.5-x64-Portable.exe`](https://github.com/bentarofficial/bigspy-ai-connect-release/releases/download/v0.1.5/BIGSPY-AI-Connect-0.1.5-x64-Portable.exe) | 106.4 MB | Run directly without installing. No in-app updates. |
 
-Version 0.1.1 is being prepared with **Settings → Updates → Check → Download → Install and restart**. Complete or cancel active tasks before installing an update. Version 0.1.0 has no updater and requires a one-time installation of a newer installer.
+SHA-256 — Setup: `a588a4adb26111ca3fc9703ab0cc1ba5820ff5a91dd4500054071c27c7dd8088` · Portable: `1de01b389e4438d524891811a7431b7df40d0419e73120fc423b804d336d98a0`
+<!-- release-downloads:end -->
+
+Use **Settings → Updates → Check → Download → Install and restart** in the installed app to move to newer versions. Complete or cancel active tasks before installing an update. Version 0.1.0 has no updater and requires a one-time installation of a newer installer.
 
 Application data is stored outside the installation directory at `%APPDATA%/bigspy-ai-connect`. The current distribution design preserves this data and user project folders during upgrades and uninstallation. Preview installers are unsigned; check each release for its exact feature scope.
 
