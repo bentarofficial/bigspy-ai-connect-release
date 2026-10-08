@@ -2,91 +2,92 @@
 
 # BIGSPY AI Connect
 
-### Một không gian làm việc. Nhiều AI phối hợp. Tiến độ có thể kiểm chứng.
+### One workspace. Coordinated AI. Verifiable progress.
 
-Ứng dụng Windows theo định hướng **local-first**, kết hợp điều phối công việc, thanh tra độc lập và quản lý tài nguyên máy trong một luồng làm việc thống nhất.
+A **local-first Windows workspace** designed to bring task orchestration, independent AI review, and machine resource management into one workflow.
 
-**BigBoss tiếp nhận · Mini Boss điều phối · Cute Boss thanh tra**
+**BigBoss receives · Mini Boss coordinates · Cute Boss reviews**
 
-[Khám phá kiến trúc](#kiến-trúc-phối-hợp) · [Trải nghiệm dự kiến](#trải-nghiệm-làm-việc) · [Lộ trình phát triển](#lộ-trình-phát-triển) · [Tải và cài đặt](#tải-và-cài-đặt)
+[Architecture](#coordination-architecture) · [Workspace experience](#workspace-experience) · [Development roadmap](#development-roadmap) · [Download](#download-and-installation)
 
 </div>
 
 ---
 
-> **Trạng thái: desktop preview đang phát triển.** Đã có khung ứng dụng Windows, popup BigBoss và task local kiểm tra metadata workspace. AI thực thi, Cute Boss AI, Telegram và chuyển ngôn ngữ chưa triển khai. Các sơ đồ bên dưới mô tả thiết kế mục tiêu. Tại ngày 08/10/2026, bản 0.1.1 đang ở trạng thái draft; hãy xem Releases để biết bản nào đã được công bố.
+> **Status: desktop preview in development.** The Windows app shell, BigBoss popup, and local workspace metadata tasks are available. AI execution, Cute Boss AI, Telegram, and language switching are not implemented. The diagrams describe the target design. As of October 8, 2026, version 0.1.1 is a draft; check Releases for published builds.
 
-## Tải và cài đặt
+## Download and installation
 
-Xem [GitHub Releases](https://github.com/bentarofficial/bigspy-ai-connect-release/releases) để chọn bản đã công bố và đọc ghi chú phiên bản. Release ở trạng thái draft chưa có sẵn cho người dùng công khai.
+Visit [GitHub Releases](https://github.com/bentarofficial/bigspy-ai-connect-release/releases) for published builds and version-specific notes. Draft releases are not publicly available.
 
-| Gói | Cách dùng |
+| Package | Usage |
 | :--- | :--- |
-| **Setup.exe** | Cài ứng dụng Windows; dùng installer khi muốn nhận cập nhật trong ứng dụng ở phiên bản có updater. |
-| **Portable** | Chạy trực tiếp để thử; dùng installer cho luồng cập nhật trong ứng dụng. |
+| **Setup.exe** | Install the Windows application. Use the installer for in-app updates in versions that support the updater. |
+| **Portable** | Run directly for evaluation. Use the installer for the in-app update workflow. |
 
-Bản 0.1.1 đang được chuẩn bị với luồng **Cài đặt → Cập nhật → Kiểm tra → Tải → Cài và khởi động lại**. Cần hoàn tất hoặc hủy task trước khi cài bản mới. Bản 0.1.0 chưa có updater và cần cài installer mới một lần.
+Version 0.1.1 is being prepared with **Settings → Updates → Check → Download → Install and restart**. Complete or cancel active tasks before installing an update. Version 0.1.0 has no updater and requires a one-time installation of a newer installer.
 
-Dữ liệu ứng dụng nằm ngoài thư mục cài đặt, tại `%APPDATA%/bigspy-ai-connect`. Theo thiết kế phân phối hiện tại, nâng cấp và gỡ cài đặt giữ dữ liệu này cùng thư mục dự án của người dùng. Preview chưa ký số; phạm vi tính năng cụ thể được ghi trong từng release.
+Application data is stored outside the installation directory at `%APPDATA%/bigspy-ai-connect`. The current distribution design preserves this data and user project folders during upgrades and uninstallation. Preview installers are unsigned; check each release for its exact feature scope.
 
 <details>
-<summary><strong>Thông tin phân phối và dữ liệu cập nhật</strong></summary>
+<summary><strong>Distribution and update metadata</strong></summary>
 
-Ứng dụng dùng nguồn release này qua electron-updater. Mỗi bản phát hành phục vụ cập nhật cần installer NSIS, file `.blockmap` và `latest.yml` được tạo cùng build. Chỉ công bố bản khi bộ artifact cập nhật đầy đủ và đã kiểm tra.
+The application uses this release repository through electron-updater. Each update release requires an NSIS installer, its `.blockmap` file, and `latest.yml` generated from the same build. Publish only when the update artifacts are complete and validated.
 
 </details>
 
 ---
 
-## Từ yêu cầu đến kết quả có bằng chứng
 
-BIGSPY AI Connect được định hướng giúp người dùng giao mục tiêu cho AI, theo dõi công việc theo dự án và nhận kết quả kèm dấu vết thực hiện. Mini Boss chia và điều phối task; Cute Boss kiểm tra kết quả, phản hồi sai sót để tiếp tục xử lý; BigBoss nhận bàn giao và giúp người dùng theo dõi ở cấp tổng thể.
+## From a goal to results with evidence
 
-Mỗi task dự kiến mang theo mục tiêu, đầu vào, phiên bản yêu cầu, model và công cụ được phép, ngân sách, môi trường thực thi cùng tiêu chí nghiệm thu. Kết quả được liên kết với artifact, log và hoạt động thanh tra để người dùng có thể đối chiếu.
+BIGSPY AI Connect is designed to help users assign goals to AI, track work by project, and receive results with a traceable execution history. Mini Boss breaks work into tasks and coordinates execution. Cute Boss checks outputs and evidence, then sends findings back for correction. BigBoss receives the handoff and provides an overall view of the work.
 
-| Định hướng | Giá trị hướng tới |
+Each task is intended to carry its goal, inputs, requirement version, permitted models and tools, budget, execution environment, and acceptance criteria. Outputs are linked to artifacts, logs, and review activity so users can verify what happened.
+
+| Design focus | Intended benefit |
 | :--- | :--- |
-| **Điều phối nhiều AI** | Chọn agent, model và connector theo năng lực, quyền, mức sẵn sàng và ngân sách của công việc. |
-| **Thanh tra độc lập** | Kiểm tra output và bằng chứng; đưa phát hiện lỗi vào luồng sửa và kiểm tra lại. |
-| **Ngữ cảnh theo dự án và task** | Giữ nguồn, phiên bản đầu vào và kết quả bàn giao; tránh trộn yêu cầu giữa các công việc. |
-| **Minh bạch tiến độ và chi phí** | Truy lại giao việc, xử lý lỗi, output và token theo hoạt động khi nhà cung cấp hỗ trợ số liệu. |
-| **Thực thi có giới hạn** | Kết hợp quyền công cụ, phê duyệt, timeout, retry, ngân sách và tài nguyên máy. |
+| **Multi-model orchestration** | Select agents, models, and connectors based on capability, permissions, availability, and task budget. |
+| **Independent review** | Check outputs against evidence and route findings into a correction and recheck loop. |
+| **Project and task context** | Preserve input sources, versions, and handoffs while keeping separate work streams distinct. |
+| **Visible progress and usage** | Trace assignments, corrections, outputs, and token usage when provider data is available. |
+| **Bounded execution** | Combine tool permissions, approvals, timeouts, retries, budgets, and machine resource limits. |
 
-## Kiến trúc phối hợp
+## Coordination architecture
 
-Sơ đồ thể hiện quan hệ giữa các vai trò trong thiết kế. Số lượng Mini Boss/Cute Boss trên mỗi dự án và giới hạn đồng thời sẽ được cụ thể hóa trong đặc tả MVP.
+This diagram describes the intended relationships between roles. The number of Mini Boss and Cute Boss instances per project, and concurrency limits, will be specified in the MVP design.
 
 ```mermaid
 flowchart TB
-    U["NGƯỜI DÙNG<br/>Mục tiêu · Yêu cầu · Phê duyệt"]
-    BB["BIGBOSS<br/>Tiếp nhận · Theo dõi tổng thể · Nhận bàn giao"]
+    U["USER<br/>Goals · Requests · Approvals"]
+    BB["BIGBOSS<br/>Intake · Overall progress · Handoffs"]
 
-    subgraph P["NGỮ CẢNH DỰ ÁN / PHIÊN LÀM VIỆC"]
+    subgraph P["PROJECT / SESSION CONTEXT"]
         direction TB
-        MB["MINI BOSS<br/>Lập kế hoạch · Giao task · Điều phối sửa lỗi"]
-        CB["CUTE BOSS<br/>Thanh tra · Phản hồi lỗi · Kiểm tra lại"]
+        MB["MINI BOSS<br/>Planning · Assignment · Corrections"]
+        CB["CUTE BOSS<br/>Review · Findings · Rechecks"]
         subgraph TW["TASK WORKSPACE"]
             direction LR
-            T1["Task A<br/>Đầu vào · Model · Công cụ"]
-            T2["Task B<br/>Ngân sách · Quyền · Output"]
-            TN["Các task khác<br/>Phụ thuộc · Tiêu chí nghiệm thu"]
+            T1["Task A<br/>Inputs · Model · Tools"]
+            T2["Task B<br/>Budget · Permissions · Output"]
+            TN["Other tasks<br/>Dependencies · Acceptance criteria"]
         end
-        MB -->|"Giao việc và nhận kết quả"| TW
-        TW -->|"Output và bằng chứng"| CB
-        CB -->|"Phát hiện lỗi cần xử lý"| MB
-        MB -->|"Kết quả sửa để kiểm tra lại"| CB
+        MB -->|"Assign work and receive results"| TW
+        TW -->|"Outputs and evidence"| CB
+        CB -->|"Findings requiring correction"| MB
+        MB -->|"Corrected results for recheck"| CB
     end
 
-    RG["RESOURCE GUARDIAN<br/>Dịch vụ local · Theo dõi tài nguyên · Điều tiết worker"]
-    E["HẠ TẦNG ĐIỀU PHỐI VÀ KIỂM TOÁN<br/>Trạng thái · Hàng đợi · Sự kiện · Quyền · Usage · Artifact"]
+    RG["RESOURCE GUARDIAN<br/>Local service · Resource monitoring · Worker limits"]
+    E["ORCHESTRATION AND AUDIT INFRASTRUCTURE<br/>State · Queues · Events · Permissions · Usage · Artifacts"]
 
-    U <-->|"Yêu cầu và kết quả"| BB
-    BB -->|"Chuyển mục tiêu công việc"| MB
-    MB -->|"Bàn giao output"| BB
-    CB -->|"Tóm tắt thanh tra khi Mini Boss bàn giao"| BB
-    RG -->|"Sự kiện tài nguyên để điều chỉnh lịch chạy"| MB
-    RG -->|"Thông tin khi cần quyết định"| BB
-    E -.->|"Lưu và liên kết dấu vết thực hiện"| P
+    U <-->|"Requests and results"| BB
+    BB -->|"Work objectives"| MB
+    MB -->|"Output handoff"| BB
+    CB -->|"Review summary at Mini Boss handoff"| BB
+    RG -->|"Resource events for scheduling"| MB
+    RG -->|"Information when a decision is needed"| BB
+    E -.->|"Persist and link execution evidence"| P
 
     classDef boss fill:#172554,stroke:#60a5fa,color:#eff6ff;
     classDef review fill:#2e1065,stroke:#c084fc,color:#faf5ff;
@@ -96,128 +97,128 @@ flowchart TB
     class RG,E infra;
 ```
 
-| Thành phần | Trách nhiệm | Đầu ra / phối hợp |
+| Component | Responsibility | Output and collaboration |
 | :--- | :--- | :--- |
-| **BigBoss** | Tiếp nhận yêu cầu, giao tiếp cấp tổng thể và theo dõi bàn giao. | Nhận output từ Mini Boss và bản tóm tắt thanh tra từ Cute Boss. |
-| **Mini Boss** | Chia việc, giao task, nhận kết quả và điều phối xử lý sai sót. | Bàn giao kết quả có liên kết đến task và dấu vết xử lý. |
-| **Cute Boss** | Quan sát, kiểm tra bằng chứng, phát hiện lỗi và kiểm tra lại. | Báo lỗi cho Mini Boss; gửi tóm tắt hoạt động cho BigBoss khi Mini Boss xuất output. |
-| **Task** | Thực hiện phạm vi công việc với đầu vào, công cụ, quyền và giới hạn riêng. | Output/artifact, log, usage và bằng chứng nghiệm thu. |
-| **Resource Guardian** | Theo dõi tài nguyên máy, điều tiết lịch chạy và quản lý worker thuộc Bigspy. | Gửi sự kiện cho Mini Boss; cung cấp thông tin cho BigBoss khi cần quyết định. |
-| **Hạ tầng điều phối và kiểm toán** | Lưu trạng thái, sự kiện, phê duyệt, kết quả và mức sử dụng. | Giúp truy lại tiến độ, khôi phục và liên kết bằng chứng; đây là hạ tầng, không phải một Boss. |
+| **BigBoss** | Receive requests, communicate at the overall level, and track handoffs. | Receive Mini Boss outputs and Cute Boss review summaries. |
+| **Mini Boss** | Plan work, assign tasks, collect results, and coordinate corrections. | Hand over results linked to tasks and execution history. |
+| **Cute Boss** | Inspect evidence, identify issues, and recheck corrections. | Report findings to Mini Boss; summarize review activity for BigBoss when Mini Boss hands over output. |
+| **Task** | Execute scoped work with its own inputs, tools, permissions, and limits. | Produce outputs, artifacts, logs, usage records, and acceptance evidence. |
+| **Resource Guardian** | Monitor machine resources, regulate scheduling, and manage Bigspy-owned workers. | Send resource events to Mini Boss and decision-relevant information to BigBoss. |
+| **Orchestration and audit infrastructure** | Persist state, events, approvals, results, and usage. | Support traceability, recovery, and evidence links. This is infrastructure rather than another Boss. |
 
-Cute Boss không gửi báo cáo liên tục cho BigBoss trong quá trình làm việc. Bản tóm tắt thanh tra được gửi ở mốc bàn giao, phân biệt với kết quả công việc của Mini Boss. Resource Guardian xử lý theo quy tắc và không gọi AI cho từng lần đo tài nguyên.
+Cute Boss sends its activity summary at the handoff milestone, rather than continuously reporting to BigBoss. That summary is separate from Mini Boss's work output. Resource Guardian follows rules without calling AI for every resource measurement.
 
-## Vòng làm việc và kiểm tra
+## Execution and review loop
 
 ```mermaid
 flowchart LR
-    A["Người dùng<br/>Gửi mục tiêu"] --> B["BigBoss<br/>Tiếp nhận"]
-    B --> C["Mini Boss<br/>Lập kế hoạch"]
-    C --> D["Task<br/>Thực hiện"]
-    D --> F["Cute Boss<br/>Kiểm tra bằng chứng"]
-    F --> Q{"Đạt tiêu chí?"}
-    Q -->|"Cần sửa"| R["Mini Boss<br/>Điều phối khắc phục"]
+    A["User<br/>Submit a goal"] --> B["BigBoss<br/>Receive request"]
+    B --> C["Mini Boss<br/>Plan work"]
+    C --> D["Task<br/>Execute"]
+    D --> F["Cute Boss<br/>Review evidence"]
+    F --> Q{"Acceptance criteria met?"}
+    Q -->|"Correction needed"| R["Mini Boss<br/>Coordinate fixes"]
     R --> D
-    Q -->|"Đạt"| H["Bàn giao cho BigBoss<br/>Output + Tóm tắt thanh tra"]
-    H --> I["Người dùng<br/>Xem kết quả và dấu vết"]
+    Q -->|"Passed"| H["Handoff to BigBoss<br/>Output + Review summary"]
+    H --> I["User<br/>Inspect results and history"]
 ```
 
-Vòng sửa phải nằm trong giới hạn token, chi phí, thời gian và số lần xử lý đã chốt. Nếu thiếu quyền, đầu vào, connector hoặc tài nguyên, task cần hiển thị trạng thái chờ/lỗi với lý do rõ ràng; những trường hợp vượt giới hạn được chuyển cấp theo chính sách.
+Correction loops must stay within agreed token, cost, time, and retry limits. Missing permissions, inputs, connectors, or resources should produce a clear waiting or error state. Work that exceeds limits is escalated according to policy.
 
-## Trải nghiệm làm việc
+## Workspace experience
 
-### Ngôn ngữ giao diện
+### Interface language
 
-**Định hướng đã xác nhận:** giao diện mặc định **English**, có nút chuyển **English / Tiếng Việt** trong Cài đặt → Ngôn ngữ. Lựa chọn được ghi nhớ và áp dụng đồng bộ cho workspace cùng popup BigBoss. Chuyển ngôn ngữ giữ nguyên phiên, task và nội dung người dùng. Tính năng này đang được lên kế hoạch ở **ST.8**, chưa có trong preview hiện tại.
+**Confirmed direction:** English is the default interface language, with an **English / Tiếng Việt** switch in **Settings → Language**. The selected language will be saved and synchronized across the workspace and BigBoss popup. Switching languages will preserve sessions, tasks, and user content.
 
-### Workspace ba vùng và BigBoss trên desktop
+This is planned under **ST.8** and will be implemented during the corresponding feature stage. It is not available in the current preview.
 
-Giao diện chính dự kiến gồm sidebar, bảng Mini Boss và bảng task. BigBoss là popup native riêng trên desktop, có thể kéo, đổi kích thước và ẩn/hiện mà vẫn giữ phiên.
+### Three workspace panels and a desktop BigBoss popup
 
-| Sidebar / menu | Bảng Mini Boss | Bảng task bên phải |
+The main workspace is designed around a sidebar, a Mini Boss panel, and a task panel. BigBoss runs in a separate native desktop popup that can be moved, resized, shown, or hidden while preserving its session.
+
+| Sidebar / menu | Mini Boss panel | Right-hand task panel |
 | :--- | :--- | :--- |
-| **BigBoss ⋯** — thiết lập kênh giao tiếp | **Tab Mini Boss** — phiên và trạng thái riêng | **Tab task** — bộ task của Mini Boss đang chọn |
-| **Show / Hide BigBoss** | Mục tiêu, trao đổi và kế hoạch | Đầu vào, phụ thuộc, agent và connector |
-| **New Project** và danh sách dự án | Điều phối, cập nhật và output | Log, artifact, phát hiện thanh tra và chi phí |
-| Cài đặt / tài khoản | Tab nền giữ phiên và tiếp tục theo giới hạn | Phê duyệt, hủy và mở lại task theo quyền |
+| **BigBoss ⋯** — communication channel settings | **Mini Boss tabs** — separate sessions and states | **Task tabs** — tasks belonging to the selected Mini Boss |
+| **Show / Hide BigBoss** | Goals, conversation, and plans | Inputs, dependencies, agents, and connectors |
+| **New Project** and project list | Coordination, updates, and outputs | Logs, artifacts, review findings, and costs |
+| Settings / account | Background tabs retain sessions and run within limits | Approval, cancellation, and reopening controls |
 
-Chọn Mini Boss khôi phục đúng bộ tab task và task được xem gần nhất. Đóng tab là đóng vùng hiển thị; hủy task là thao tác riêng. Công việc đồng thời chịu giới hạn quyền, ngân sách và Resource Guardian.
+Selecting a Mini Boss restores its own task tabs and most recently selected task. Closing a tab closes its view; cancelling a task is a separate action. Concurrent work remains subject to permissions, budgets, and Resource Guardian limits.
 
-### Desktop và Telegram dùng cùng BigBoss
+### Desktop and Telegram share the same BigBoss
 
 ```mermaid
 flowchart LR
-    PC["Popup BigBoss<br/>Ứng dụng Windows"] <-->|"Chat và kết quả"| BB["CÙNG BIGBOSS<br/>Cùng quyền · Ngân sách · Lịch sử"]
-    TG["Telegram<br/>Private chat đã ghép"] <-->|"Yêu cầu và thông báo"| BB
-    BB <--> TE["Task engine<br/>Mini Boss · Task · Cute Boss"]
+    PC["BigBoss popup<br/>Windows application"] <-->|"Chat and results"| BB["SAME BIGBOSS<br/>Shared permissions · Budgets · History"]
+    TG["Telegram<br/>Paired private chat"] <-->|"Requests and notifications"| BB
+    BB <--> TE["Task engine<br/>Mini Boss · Tasks · Cute Boss"]
 ```
 
-Telegram được lên kế hoạch là kênh giao tiếp đầu tiên: gửi yêu cầu văn bản, chọn dự án, xem trạng thái và nhận kết quả từ điện thoại. Với thực thi local, máy phải bật, ứng dụng/dịch vụ Bigspy phải chạy và có Internet. Hide BigBoss chỉ ẩn popup. Ảnh, file, voice, group chat và relay 24/7 thuộc phạm vi mở rộng cần đặc tả riêng.
+Telegram is planned as the first communication channel: send text requests, select projects, check progress, and receive results from a phone. Local execution requires the computer to be on, the Bigspy app or service to be running, and an Internet connection. Hiding BigBoss only hides the popup. Images, files, voice, group chats, and a 24/7 relay require separate specifications.
 
-BigBoss cần môi trường ứng dụng Windows đã cài và cầu nối native; giao diện web/local HTML mở riêng không có năng lực này.
+BigBoss requires the installed Windows app and its native bridge. A standalone web or local HTML interface does not provide those capabilities.
 
-### Bổ sung yêu cầu khi task đang chạy
+### Add requirements while work is running
 
-Input mới dự kiến được lưu bền vững và gắn đúng project/task trước khi xác nhận. Bổ sung cho cùng công việc được áp dụng tại điểm an toàn; công việc khác được định tuyến sang task phù hợp. Input cùng task hoặc luồng phụ thuộc xử lý theo thứ tự nhận; yêu cầu sửa, thay thế hoặc hủy rõ ràng được ghi nhận theo phiên bản. Các task độc lập có thể chạy song song trong giới hạn cho phép.
+New input is intended to be persisted and linked to the correct project and task before acknowledgement. Updates to the same work are applied at a safe checkpoint; unrelated work is routed to the appropriate task. Input within a task or dependent work stream follows arrival order, with explicit edits, replacements, and cancellations tracked by requirement version. Independent tasks may run concurrently within permitted limits.
 
-## Quyền, dữ liệu và tài nguyên
+## Permissions, data, and resources
 
-| Phạm vi kiểm soát | Thiết kế dự kiến |
+| Control area | Intended design |
 | :--- | :--- |
-| **Connector và model** | Công bố năng lực thực tế, xác thực, quyền đọc/ghi, tình trạng kết nối và giới hạn. Danh sách nhà cung cấp đầu tiên chưa chốt. |
-| **Hành động có tác dụng bên ngoài** | Kiểm tra quyền và phê duyệt tại thời điểm thực hiện; ghi dấu vết để đối chiếu. |
-| **Bí mật và dữ liệu** | Quản lý khóa qua kho bí mật, giới hạn dữ liệu gửi ra ngoài, chốt chính sách lưu/xóa và xử lý nội dung bên ngoài như dữ liệu. |
-| **Ngân sách** | Giới hạn token, chi phí, thời gian và số vòng sửa; phân biệt số ước tính với số liệu nhà cung cấp. |
-| **Tài nguyên local** | Theo dõi RAM, CPU, ổ đĩa và GPU/VRAM khi cần; điều chỉnh số task và worker thuộc Bigspy. |
-| **Độ bền tác vụ** | Hàng đợi, checkpoint, timeout, retry có giới hạn, chống ghi trùng, hủy và khôi phục sau gián đoạn. |
+| **Connectors and models** | Publish actual capabilities, authentication methods, read/write permissions, connection health, and limits. Initial providers are still being selected. |
+| **External actions** | Check permissions and required approvals at execution time, and record an audit trail. |
+| **Secrets and data** | Use a secret store, limit outgoing data, define retention/deletion policies, and treat external content as data. |
+| **Budgets** | Limit tokens, cost, time, and correction rounds; distinguish estimates from provider-reported usage. |
+| **Local resources** | Monitor RAM, CPU, disk space, and GPU/VRAM when needed; regulate tasks and Bigspy-owned workers. |
+| **Task durability** | Support queues, checkpoints, timeouts, bounded retries, duplicate-write prevention, cancellation, and recovery. |
 
-Local-first là định hướng thực thi và trải nghiệm trên máy người dùng. Phân bố backend local/remote, lưu trữ và mô hình tài khoản vẫn cần chốt; dữ liệu gửi cho AI/connector phụ thuộc quyền và chính sách đã cấp.
+Local-first describes the intended execution and desktop experience. Backend distribution, storage, and the account model still need to be finalized. Data sent to AI providers or connectors is governed by granted permissions and policy.
 
-## Lộ trình phát triển
+## Development roadmap
 
-Roadmap trong repo mã nguồn là nguồn theo dõi tiến độ chính thức; bảng dưới đây là bản tóm tắt cho người dùng. Việc hoàn thành một quyết định thiết kế không đồng nghĩa tính năng đã được xây dựng.
+The source repository roadmap is the authoritative progress tracker. The tables below summarize it for users. A completed design decision does not mean the corresponding feature has been built.
 
-| Giai đoạn | Trọng tâm | Điều kiện tiến tới |
+| Phase | Focus | Progress gate |
 | :--- | :--- | :--- |
-| **0 · Đặc tả** | Phạm vi MVP, vai trò, connector, quyền, dữ liệu, ngân sách và tiêu chí nghiệm thu. | Các quyết định có thể kiểm chứng; hiện đã xác nhận cấu trúc agent cấp cao ở **0.2**. |
-| **1 · Nền tảng** | Kiến trúc repo, cấu hình, schema, adapter, hàng đợi và lưu trữ. | Nền tảng thực thi, quyền và khôi phục được kiểm tra. |
-| **2 · Điều phối** | BigBoss tiếp nhận; Mini Boss phân công, xử lý phản hồi và bàn giao. | Luồng task có trạng thái, giới hạn và dấu vết. |
-| **3 · Thanh tra** | Cute Boss kiểm tra, phản hồi lỗi và báo cáo ở mốc bàn giao. | Kết luận dựa trên bằng chứng; đo cảnh báo sai và lỗi bỏ sót. |
-| **4 · Giao diện** | Tiến độ, output, thanh tra, chi phí, quyền và cài đặt. | Người dùng theo dõi và điều khiển được công việc. |
-| **5 · MVP** | Kiểm chứng đầu cuối, lỗi, gián đoạn và tài liệu vận hành. | Các cổng nghiệm thu đạt với ít nhất một connector thật. |
-| **6 · Tự cải tiến** | BigBoss chuẩn bị thay đổi qua nhánh/commit/PR. | Triển khai sau MVP ổn định, có kiểm tra chất lượng, phê duyệt và hoàn tác. |
+| **0 · Specification** | MVP scope, roles, connectors, permissions, data, budgets, and acceptance criteria. | Verifiable decisions; the high-level agent structure is confirmed in **0.2**. |
+| **1 · Foundation** | Repository architecture, configuration, schemas, adapters, queues, and storage. | Validate execution, permissions, and recovery foundations. |
+| **2 · Orchestration** | BigBoss intake; Mini Boss assignment, feedback handling, and handoffs. | Traceable task flows with explicit states and limits. |
+| **3 · Review** | Cute Boss inspection, findings, and handoff summaries. | Evidence-based conclusions, with false positives and missed issues measured. |
+| **4 · Interface** | Progress, outputs, reviews, costs, permissions, settings, and language switching. | Users can observe and control their work. |
+| **5 · MVP validation** | End-to-end flows, failures, interruptions, and operating documentation. | Pass acceptance gates with at least one real connector. |
+| **6 · Self-improvement** | BigBoss prepares changes through branches, commits, and pull requests. | Begin after MVP stability, with quality checks, approval, and rollback. |
 
-Các luồng **DT/NP** (Windows, popup và dự án), **WS** (workspace), **TK** (task), **IN** (input đang chạy), **RG** (tài nguyên local), **ST** (cài đặt) và **TG** (Telegram văn bản/private chat) được phối hợp vào MVP theo phạm vi chi tiết trong roadmap.
+The **DT/NP** (Windows, popup, projects), **WS** (workspace), **TK** (tasks), **IN** (ongoing input), **RG** (local resources), **ST** (settings), and **TG** (Telegram text/private chat) work streams feed into the MVP according to the detailed roadmap.
 
-| Ưu tiên | Phạm vi |
+| Priority | Scope |
 | :--- | :--- |
-| **P0 · MVP** | Luồng task đầu cuối, thanh tra/sửa lỗi, một connector thật, desktop Windows, workspace và các cổng quyền, chi phí, tài nguyên, khôi phục. |
-| **P1 · Sau MVP** | Connector thứ hai khác loại, giám sát/danh mục nâng cao và giai đoạn BigBoss tự cải tiến. |
-| **P2 · Mở rộng** | Connector theo nhu cầu thực; chỉ xem xét tự merge phạm vi nhỏ sau khi đạt ngưỡng chất lượng và có rollback. |
+| **P0 · MVP** | End-to-end tasks, review and correction, one real connector, Windows desktop, workspace, and permission, cost, resource, and recovery gates. |
+| **P1 · After MVP** | A second connector of a different type, advanced monitoring/catalog features, and BigBoss self-improvement. |
+| **P2 · Expansion** | Additional connectors based on real demand; consider narrowly scoped auto-merge only after quality thresholds and rollback are established. |
 
-### Ba hành trình nghiệm thu bản đầu
+### Three acceptance journeys
 
-1. **Thành công:** yêu cầu → BigBoss → Mini Boss → thực hiện → output và báo cáo Cute Boss.
-2. **Phát hiện sai sót:** Cute Boss báo lỗi → Mini Boss điều phối sửa → kiểm tra lại → bàn giao.
-3. **Kết nối gặp vấn đề:** connector lỗi hoặc hết quyền → trạng thái rõ ràng → xử lý theo chính sách và kiểm chứng.
+1. **Success:** request → BigBoss → Mini Boss → execution → output and Cute Boss report.
+2. **Correction:** Cute Boss finding → Mini Boss coordinates a fix → recheck → handoff.
+3. **Connection failure:** connector error or revoked permission → clear state → policy-driven handling and validation.
 
-Bản phát hành đầu tiên cần có log, artifact, báo cáo hoạt động/token, kiểm thử quyền và chi phí, khả năng phục hồi cùng tài liệu vận hành. Khả năng kết nối được tính bằng connector đã qua kiểm thử hợp đồng.
+The first MVP release requires logs, artifacts, activity and token reports, permission and cost tests, recovery, and operating documentation. Connector support is measured by connectors that pass contract tests.
 
-## Theo dõi dự án
+## Follow the project
 
-Repo này dùng để giới thiệu sản phẩm, phân phối installer Windows và dữ liệu cập nhật. Mã nguồn được quản lý trong repo phát triển riêng. Connector AI MVP, mô hình người dùng và một số hợp đồng dữ liệu vẫn cần chốt.
+This repository presents the product and distributes Windows installers and update metadata. Source code is maintained in a separate development repository. The MVP AI connector, account model, and some data contracts are still being finalized.
 
-- Xem [lộ trình phát triển](#lộ-trình-phát-triển) để hiểu phạm vi dự kiến.
-- Gửi đề xuất hoặc báo vấn đề qua [GitHub Issues](https://github.com/bentarofficial/bigspy-ai-connect-release/issues), kèm mục roadmap liên quan và kết quả mong muốn.
-- Theo dõi [Releases](https://github.com/bentarofficial/bigspy-ai-connect-release/releases) khi bản đã kiểm chứng được công bố.
+- Review the [development roadmap](#development-roadmap) for planned scope.
+- Share suggestions or report problems through [GitHub Issues](https://github.com/bentarofficial/bigspy-ai-connect-release/issues), including the relevant roadmap area and expected outcome.
+- Follow [Releases](https://github.com/bentarofficial/bigspy-ai-connect-release/releases) for published, validated builds.
 
 ---
 
 <div align="center">
 
 **BIGSPY AI Connect**  
-Từ mục tiêu đến kết quả — có điều phối, có thanh tra, có bằng chứng.
+From goals to results — with coordination, review, and evidence.
 
 </div>
-
----
