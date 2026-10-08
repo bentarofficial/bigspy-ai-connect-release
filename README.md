@@ -14,7 +14,7 @@ A **local-first Windows workspace** designed to bring task orchestration, indepe
 
 ---
 
-> **Status: desktop preview in development.** The Windows app shell, BigBoss popup, local workspace tasks, and a basic AI chat task (your own API key, stored encrypted on this PC) are available. Cute Boss AI, Telegram, full agent orchestration, and language switching are not implemented yet. The diagrams describe the target design.
+> **Status: desktop preview 0.1.5 — published.** Includes full-height Mini Boss/task panels, a standalone BigBoss popup, local audit tasks, API chat (OpenAI, Claude, Kyma and compatible APIs), light/dark themes and installer updates. Full agent orchestration, Cute Boss AI, Telegram, subscription connections and language switching remain planned.
 
 ## Download and installation
 
