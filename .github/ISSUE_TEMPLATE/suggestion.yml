@@ -1,0 +1,35 @@
+name: Đề xuất cải tiến / Improvement suggestion
+description: Gửi từ BIGSPY AI Connect (Settings → Đề xuất) hoặc tự viết. Sent from the app or written by hand.
+title: "[Đề xuất] "
+labels: ["đề xuất"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Đề xuất được xếp theo thứ tự gửi trong [SUGGESTIONS.md](../blob/main/SUGGESTIONS.md). Nếu đã có đề xuất giống, hãy bấm 👍 ở đó thay vì gửi trùng.
+        Suggestions are listed in the order received in SUGGESTIONS.md. If one already matches, add 👍 there instead.
+  - type: input
+    id: summary
+    attributes:
+      label: Tóm tắt / Summary
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Vấn đề / Problem
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Đề xuất / Proposal
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Phiên bản app / App version
+  - type: dropdown
+    id: source
+    attributes:
+      label: Nguồn / Source
+      options: ["User", "Agent"]
