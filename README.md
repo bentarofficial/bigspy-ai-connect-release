@@ -34,7 +34,7 @@
 SHA-256 — Setup: `2345148c8a55831e89e18293bd67e086c11147f3e71411371ce9dd726a930a2c`
 <!-- release-downloads:end -->
 
-Install with Setup for in-app updates, or run Portable and update manually. Application data remains outside the install directory. Read the release-specific scope before relying on a tool. This repository distributes builds and public product information; source development is maintained separately.
+Install with Setup; updates arrive inside the app. Application data remains outside the install directory. Read the release-specific scope before relying on a tool. This repository distributes builds and public product information; source development is maintained separately.
 
 ## Why AI Connect
 
@@ -149,13 +149,13 @@ Local-first keeps context and control on your machine. Cloud calls still send se
 
 ## Get started
 
-1. Open [public Windows downloads](https://github.com/bentarofficial/bigspy-ai-connect-release/releases/latest); choose **Setup** or **Portable**. Preview packages are unsigned.
+1. Open [public Windows downloads](https://github.com/bentarofficial/bigspy-ai-connect-release/releases/latest); download **Setup.exe**. Preview packages are unsigned.
 2. Launch the app, select language and create a project with a local workspace.
 3. Configure one AI connection and complete its inference check; checks may consume allowance.
 4. Create a small AI task and inspect its output, Cute Boss report and usage.
 5. Optionally pair Telegram and review concurrency, Guardian, backup and update settings.
 
-Installed apps update through **Settings → Updates** once task/input queues are clear. Portable builds update manually. Data is outside the install directory and project files remain separate.
+Installed apps update through **Settings → Updates** once task/input queues are clear. Data is outside the install directory and project files remain separate.
 
 ## Development direction
 
