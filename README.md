@@ -18,21 +18,20 @@
 
 </div>
 
-> **Status: desktop preview 0.1.11 — published.** Source development and public downloads have different scopes. The latest verified public build is **v0.1.11**. Newer source adds automatic delegation, desktop attachments, web materials and rich output; real-account acceptance remains open. Reviewed against the roadmap and public release notes on **2026-10-12**.
+> **Status: desktop preview 0.1.12 — published.** The latest public build is **v0.1.12**; see its [release notes](https://github.com/bentarofficial/bigspy-ai-connect-release/releases/tag/v0.1.12) for scope. Real-account acceptance remains open.
 
 **Explore:** [Why AI Connect](#why-ai-connect) · [Capabilities](#capability-matrix) · [AI team](#how-the-ai-team-works) · [Models](#connections-and-model-intelligence) · [Get started](#get-started) · [Roadmap](#development-direction) · [Support](#feedback-and-support) · [FAQ](#frequently-asked-questions)
 
 ## Download and installation
 
 <!-- release-downloads:start -->
-**Latest release: v0.1.11** — Windows x64 preview, unsigned · [Release notes](https://github.com/bentarofficial/bigspy-ai-connect-release/releases/tag/v0.1.11) · [All releases](https://github.com/bentarofficial/bigspy-ai-connect-release/releases)
+**Latest release: v0.1.12** — Windows x64 preview, unsigned · [Release notes](https://github.com/bentarofficial/bigspy-ai-connect-release/releases/tag/v0.1.12) · [All releases](https://github.com/bentarofficial/bigspy-ai-connect-release/releases)
 
 | Package | Download | Size | Usage |
 | :--- | :--- | :--- | :--- |
-| **Setup.exe** | [`BIGSPY-AI-Connect-0.1.11-x64-Setup.exe`](https://github.com/bentarofficial/bigspy-ai-connect-release/releases/download/v0.1.11/BIGSPY-AI-Connect-0.1.11-x64-Setup.exe) | 106.7 MB | Install the Windows application. Supports in-app updates (Settings → Updates). |
-| **Portable** | [`BIGSPY-AI-Connect-0.1.11-x64-Portable.exe`](https://github.com/bentarofficial/bigspy-ai-connect-release/releases/download/v0.1.11/BIGSPY-AI-Connect-0.1.11-x64-Portable.exe) | 106.5 MB | Run directly without installing. No in-app updates. |
+| **Setup.exe** | [`BIGSPY-AI-Connect-0.1.12-x64-Setup.exe`](https://github.com/bentarofficial/bigspy-ai-connect-release/releases/download/v0.1.12/BIGSPY-AI-Connect-0.1.12-x64-Setup.exe) | 112.6 MB | Install the Windows application. Supports in-app updates (Settings → Updates). |
 
-SHA-256 — Setup: `4db30e42ca479045c61a12f5d422957b30b6a8cbf42c55a46afecb8d892f7c07` · Portable: `e7bdd9170fe60bbca0ea52cbf80857902706050dcbd80b703ff9ca8d5142c7a0`
+SHA-256 — Setup: `2345148c8a55831e89e18293bd67e086c11147f3e71411371ce9dd726a930a2c`
 <!-- release-downloads:end -->
 
 Install with Setup for in-app updates, or run Portable and update manually. Application data remains outside the install directory. Read the release-specific scope before relying on a tool. This repository distributes builds and public product information; source development is maintained separately.
