@@ -2,19 +2,25 @@
 
 # BIGSPY AI Connect
 
-### One workspace. Coordinated AI. Verifiable progress.
+### One goal. A coordinated AI team. Results you can inspect.
 
-A **local-first Windows workspace** designed to bring task orchestration, independent AI review, and machine resource management into one workflow.
+**A local-first Windows workspace for AI models, project tasks, independent review and controlled execution.**
 
-**BigBoss receives · Mini Boss coordinates · Cute Boss reviews**
+[![Windows](https://img.shields.io/badge/Windows-x64-003366?style=for-the-badge)](https://github.com/bentarofficial/bigspy-ai-connect-release/releases)
+[![Public preview](https://img.shields.io/github/v/release/bentarofficial/bigspy-ai-connect-release?label=public%20preview&color=008080&style=for-the-badge)](https://github.com/bentarofficial/bigspy-ai-connect-release/releases/latest)
+[![Languages](https://img.shields.io/badge/Language-EN%20%2F%20VI-7c3aed?style=for-the-badge)](#workspace-experience)
 
-[Architecture](#coordination-architecture) · [Workspace experience](#workspace-experience) · [Development roadmap](#development-roadmap) · [Download](#download-and-installation)
+[**Product website**](https://bigspyai.com/bigspy-ai-connect/) · [**Windows downloads**](https://github.com/bentarofficial/bigspy-ai-connect-release/releases/latest) · [**Release notes**](https://github.com/bentarofficial/bigspy-ai-connect-release/releases/latest)
+
+![BIGSPY AI Connect architecture with Big Boss, Mini Boss, tasks, Cute Boss and Resource Guardian](https://bigspyai.com/wp-content/uploads/connect-architecture-v2.png)
+
+*Architecture concept illustration. Some relationships describe the development direction; see the capability matrix.*
 
 </div>
 
----
+> **Status: desktop preview 0.1.11 — published.** Source development and public downloads have different scopes. The latest verified public build is **v0.1.11**. Newer source adds automatic delegation, desktop attachments, web materials and rich output; real-account acceptance remains open. Reviewed against the roadmap and public release notes on **2026-10-12**.
 
-> **Status: desktop preview 0.1.11 — published.** Includes full-height Mini Boss/task panels, standalone Big Boss popup, local audit tasks, independent connection cards and simultaneous API chat connections (Kyma recommended, Anthropic, OpenAI, Gemini, OpenRouter, Groq, Ollama Cloud and compatible APIs) with task-pinned provider/revision, English/Vietnamese UI, agent reply language, bounded Cute Boss text review with separate API/plan/model selection, local Telegram private-chat preview, RAM/disk pressure throttling, owned-worker monitoring and protected temp cleanup, guarded ChatGPT/Claude CLI plan connection previews, light/dark themes and installer updates. Native account/model access and provider terms require user validation. Telegram phone/bot acceptance still requires user validation. Grok Build/Antigravity subscription bridges, full agent orchestration and automatic file editing remain planned.
+**Explore:** [Why AI Connect](#why-ai-connect) · [Capabilities](#capability-matrix) · [AI team](#how-the-ai-team-works) · [Models](#connections-and-model-intelligence) · [Get started](#get-started) · [Roadmap](#development-direction) · [Development](#run-from-source) · [FAQ](#frequently-asked-questions)
 
 ## Download and installation
 
@@ -29,200 +35,193 @@ A **local-first Windows workspace** designed to bring task orchestration, indepe
 SHA-256 — Setup: `4db30e42ca479045c61a12f5d422957b30b6a8cbf42c55a46afecb8d892f7c07` · Portable: `e7bdd9170fe60bbca0ea52cbf80857902706050dcbd80b703ff9ca8d5142c7a0`
 <!-- release-downloads:end -->
 
-Use **Settings → Updates → Check → Download → Install and restart** in the installed app to move to newer versions. Complete or cancel active tasks before installing an update. Version 0.1.0 has no updater and requires a one-time installation of a newer installer.
+Install with Setup for in-app updates, or run Portable and update manually. Application data remains outside the install directory. Read the release-specific scope before relying on a tool. This repository distributes builds and public product information; source development is maintained separately.
 
-Application data is stored outside the installation directory at `%APPDATA%/bigspy-ai-connect`. The current distribution design preserves this data and user project folders during upgrades and uninstallation. Preview installers are unsigned; check each release for its exact feature scope.
+## Why AI Connect
 
-<details>
-<summary><strong>Distribution and update metadata</strong></summary>
+AI work becomes harder to manage when the request lives in one chat, the model choice in another tool, and the review in your memory. BIGSPY AI Connect gives that work a project, a task history and a visible checking process. Return to the original input, inspect the answer, see what Cute Boss reviewed and continue the relevant work stream.
 
-The application uses this release repository through electron-updater. Each update release requires an NSIS installer, its `.blockmap` file, and `latest.yml` generated from the same build. Publish only when the update artifacts are complete and validated.
+The product direction: explain the problem to **Big Boss**, let **Mini Boss** coordinate the work, and inspect both the result and **Cute Boss** findings. Newer source can answer short questions directly or delegate work through the three-level structure. Task results travel back through Mini Boss to the originating Big Boss conversation or paired Telegram channel.
 
-</details>
+| Focus | What it gives you |
+| --- | --- |
+| **Project context** | Separate projects, Mini Boss sessions and task histories. |
+| **Your connections** | Provider-specific readiness, model selection and an independently configured reviewer. |
+| **Independent review** | Findings, bounded corrections and a report alongside the actual output. |
+| **Local control** | Resource pressure handling, owned workers, persistence and backups. |
+| **Visible progress** | Task events, provider-reported tokens and explicit waiting/error states. |
 
----
+## Capability matrix
 
+**Public preview** means included in published v0.1.11 scope, with provider/site acceptance varying. **Newer source** means implemented with test/smoke evidence but awaiting relevant real-world acceptance. **Planned** means open roadmap work.
 
-## From a goal to results with evidence
+| Capability | Public v0.1.11 | Newer source / remaining work |
+| --- | --- | --- |
+| Projects, Mini Boss/task tabs, native Big Boss popup | Included | Separate chats, project-space drawer and navigation refinements. |
+| Provider API cards and official CLI plan previews | Included | Five effort levels and improved native model labels. |
+| Cute Boss text review, corrections and separate report | Included | Rich output rendering; full browser outcome review remains planned. |
+| Browser/Terminal tools per task | Included | Refined layouts, approved downloads and extension work; live acceptance varies. Terminal remains user-controlled. |
+| Task-operated Browser | Per-tab control switch; desktop input; up to 30 steps | Automatic assignment and project sign-in reuse in development (AUTO.11/12). |
+| Model/work profiles; Jev options | Included; Jev off by default | Real protocol/effectiveness gates still open. No universal savings claim. |
+| Telegram private text and local results | Included | Same automatic Big Boss flow in source (AUTO.4); full live acceptance open. |
+| Automatic Big Boss → Mini Boss → task delegation | Not in this public build | AUTO.1–3 implemented; up to four assignments per Mini Boss response. |
+| Linked website materials | Not in this public build | AUTO.7 extracts bounded public-page text for task and reviewer. |
+| Desktop files/images and formatted copy | Not in this public build | AUTO.8/10/13 implemented; model/clipboard acceptance open. |
+| Shared accepted knowledge, voice, work-level money budgets, self-improvement PRs | Planned | DS, MI, UC.13 and Phase 6. |
 
-BIGSPY AI Connect is designed to help users assign goals to AI, track work by project, and receive results with a traceable execution history. Mini Boss breaks work into tasks and coordinates execution. Cute Boss checks outputs and evidence, then sends findings back for correction. BigBoss receives the handoff and provides an overall view of the work.
+The source roadmap is authoritative. Its **[c]** marker means code completed, awaiting real acceptance; **[x]** means the stated criteria were verified. Neither marker alone means a feature is in an installer.
 
-Each task is intended to carry its goal, inputs, requirement version, permitted models and tools, budget, execution environment, and acceptance criteria. Outputs are linked to artifacts, logs, and review activity so users can verify what happened.
+## How the AI team works
 
-| Design focus | Intended benefit |
-| :--- | :--- |
-| **Multi-model orchestration** | Select agents, models, and connectors based on capability, permissions, availability, and task budget. |
-| **Independent review** | Check outputs against evidence and route findings into a correction and recheck loop. |
-| **Project and task context** | Preserve input sources, versions, and handoffs while keeping separate work streams distinct. |
-| **Visible progress and usage** | Trace assignments, corrections, outputs, and token usage when provider data is available. |
-| **Bounded execution** | Combine tool permissions, approvals, timeouts, retries, budgets, and machine resource limits. |
+~~~mermaid
+flowchart TD
+  U["User: goal or question"] <--> BB["Big Boss: intake and handoff"]
+  BB -->|"Work request"| MB["Mini Boss: coordinate and assign"]
+  MB --> T["Tasks: scoped execution"]
+  T --> CB["Cute Boss: inspect output and evidence"]
+  CB -->|"Findings and bounded corrections"| MB
+  T -->|"Work output"| MB
+  MB -->|"Results"| BB
+  CB -->|"Review summary at handoff"| BB
+  RG["Resource Guardian: local rules"] -->|"Scheduling signals"| MB
+~~~
 
-## Coordination architecture
+| Role | Responsibility | Boundary |
+| --- | --- | --- |
+| **Big Boss** | Intake, supported local system answers, outputs and review summaries. | Native popup; automatic intake is newer source. |
+| **Mini Boss** | Coordinate tasks, reuse/create work streams, handle review findings. | Project context and granted capabilities. |
+| **Task** | Execute with its connection, history and supported tools. | Release-specific tools and permissions. |
+| **Cute Boss** | Compare answer with request, report findings, recheck corrections. | Can miss errors; full browser outcome review is not complete. |
+| **Resource Guardian** | Observe resources, regulate new work and owned workers. | Local rules, no AI call per measurement. |
 
-This diagram describes the intended relationships between roles. The number of Mini Boss and Cute Boss instances per project, and concurrency limits, will be specified in the MVP design.
+### Review, correction and handoff
 
-```mermaid
-flowchart TB
-    U["USER<br/>Goals · Requests · Approvals"]
-    BB["BIGBOSS<br/>Intake · Overall progress · Handoffs"]
+![BIGSPY AI Connect animated request, execution, review and handoff loop](https://bigspyai.com/wp-content/uploads/connect-review-loop.gif)
 
-    subgraph P["PROJECT / SESSION CONTEXT"]
-        direction TB
-        MB["MINI BOSS<br/>Planning · Assignment · Corrections"]
-        CB["CUTE BOSS<br/>Review · Findings · Rechecks"]
-        subgraph TW["TASK WORKSPACE"]
-            direction LR
-            T1["Task A<br/>Inputs · Model · Tools"]
-            T2["Task B<br/>Budget · Permissions · Output"]
-            TN["Other tasks<br/>Dependencies · Acceptance criteria"]
-        end
-        MB -->|"Assign work and receive results"| TW
-        TW -->|"Outputs and evidence"| CB
-        CB -->|"Findings requiring correction"| MB
-        MB -->|"Corrected results for recheck"| CB
-    end
+*Workflow explanation, not a recording of a live app run.*
 
-    RG["RESOURCE GUARDIAN<br/>Local service · Resource monitoring · Worker limits"]
-    E["ORCHESTRATION AND AUDIT INFRASTRUCTURE<br/>State · Queues · Events · Permissions · Usage · Artifacts"]
+Cute Boss returns a verdict, checked items and severity-labelled findings. Failed findings go back for revision and recheck. Settings limit corrections to **0–3 rounds** and set a token threshold per input. Thresholds are checked between calls; a final call can exceed them. This is **not a hard monetary cap**. Review/correction consume additional provider fees or plan allowance.
 
-    U <-->|"Requests and results"| BB
-    BB -->|"Work objectives"| MB
-    MB -->|"Output handoff"| BB
-    CB -->|"Review summary at Mini Boss handoff"| BB
-    RG -->|"Resource events for scheduling"| MB
-    RG -->|"Information when a decision is needed"| BB
-    E -.->|"Persist and link execution evidence"| P
-
-    classDef boss fill:#172554,stroke:#60a5fa,color:#eff6ff;
-    classDef review fill:#2e1065,stroke:#c084fc,color:#faf5ff;
-    classDef infra fill:#052e16,stroke:#4ade80,color:#f0fdf4;
-    class BB,MB boss;
-    class CB review;
-    class RG,E infra;
-```
-
-| Component | Responsibility | Output and collaboration |
-| :--- | :--- | :--- |
-| **BigBoss** | Receive requests, communicate at the overall level, and track handoffs. | Receive Mini Boss outputs and Cute Boss review summaries. |
-| **Mini Boss** | Plan work, assign tasks, collect results, and coordinate corrections. | Hand over results linked to tasks and execution history. |
-| **Cute Boss** | Inspect evidence, identify issues, and recheck corrections. | Report findings to Mini Boss; summarize review activity for BigBoss when Mini Boss hands over output. |
-| **Task** | Execute scoped work with its own inputs, tools, permissions, and limits. | Produce outputs, artifacts, logs, usage records, and acceptance evidence. |
-| **Resource Guardian** | Monitor machine resources, regulate scheduling, and manage Bigspy-owned workers. | Send resource events to Mini Boss and decision-relevant information to BigBoss. |
-| **Orchestration and audit infrastructure** | Persist state, events, approvals, results, and usage. | Support traceability, recovery, and evidence links. This is infrastructure rather than another Boss. |
-
-Cute Boss sends its activity summary at the handoff milestone, rather than continuously reporting to BigBoss. That summary is separate from Mini Boss's work output. Resource Guardian follows rules without calling AI for every resource measurement.
-
-## Execution and review loop
-
-```mermaid
-flowchart LR
-    A["User<br/>Submit a goal"] --> B["BigBoss<br/>Receive request"]
-    B --> C["Mini Boss<br/>Plan work"]
-    C --> D["Task<br/>Execute"]
-    D --> F["Cute Boss<br/>Review evidence"]
-    F --> Q{"Acceptance criteria met?"}
-    Q -->|"Correction needed"| R["Mini Boss<br/>Coordinate fixes"]
-    R --> D
-    Q -->|"Passed"| H["Handoff to BigBoss<br/>Output + Review summary"]
-    H --> I["User<br/>Inspect results and history"]
-```
-
-Correction loops must stay within agreed token, cost, time, and retry limits. Missing permissions, inputs, connectors, or resources should produce a clear waiting or error state. Work that exceeds limits is escalated according to policy.
+Unreadable reviews, missing usage or exhausted limits preserve the answer and may show **Needs your decision**. Execution completion differs from accepted quality. Review activity is reported with the handoff, rather than continuously generating reports to Big Boss.
 
 ## Workspace experience
 
-### Interface language
+The main window has a project sidebar, Mini Boss sessions and a task area. Big Boss is a separate movable, resizable popup. Show/Hide preserves its session without cancelling tasks. Adjust panels and switch sessions while keeping task context. Closing a tab closes its view; cancelling execution is separate.
 
-**Confirmed direction:** English is the default interface language, with an **English / Tiếng Việt** switch in **Settings → Language**. The selected language will be saved and synchronized across the workspace and BigBoss popup. Switching languages will preserve sessions, tasks, and user content.
+English is the default UI, with **English / Tiếng Việt** in Settings. Agent reply language is separate. Light/dark appearance, local persistence and backup/restore help you continue work.
 
-This is planned under **ST.8** and will be implemented during the corresponding feature stage. It is not available in the current preview.
+Newer source adds conversations at all three levels, a project-space drawer for outputs/folder browsing, and safe Markdown headings, tables, lists and code. Formatted Copy is intended for editors such as WordPress or Word; application-specific clipboard acceptance is still open.
 
-### Three workspace panels and a desktop BigBoss popup
+### Bring materials into the work
 
-The main workspace is designed around a sidebar, a Mini Boss panel, and a task panel. BigBoss runs in a separate native desktop popup that can be moved, resized, shown, or hidden while preserving its session.
+Newer source supports file selection, drag/drop and pasted images in desktop chats. Bounded extraction covers text/code, CSV/JSON/HTML, DOCX, XLSX, PPTX and text-bearing PDF. Images depend on the model/bridge. Inputs allow **up to six files, 10 MB per file**; unsupported vision models use available text with a notice.
 
-| Sidebar / menu | Mini Boss panel | Right-hand task panel |
-| :--- | :--- | :--- |
-| **BigBoss ⋯** — communication channel settings | **Mini Boss tabs** — separate sessions and states | **Task tabs** — tasks belonging to the selected Mini Boss |
-| **Show / Hide BigBoss** | Goals, conversation, and plans | Inputs, dependencies, agents, and connectors |
-| **New Project** and project list | Coordination, updates, and outputs | Logs, artifacts, review findings, and costs |
-| Settings / account | Background tabs retain sessions and run within limits | Approval, cancellation, and reopening controls |
+Linked website reading uses bounded HTTP/HTTPS GET requests and blocks private network addresses. Task and reviewer see the same extracted material as untrusted data. This differs from interactive browser work and grants no blanket account access.
 
-Selecting a Mini Boss restores its own task tabs and most recently selected task. Closing a tab closes its view; cancelling a task is a separate action. Concurrent work remains subject to permissions, budgets, and Resource Guardian limits.
+## Connections and model intelligence
 
-### Desktop and Telegram share the same BigBoss
+![BIGSPY AI Connect provider, task model and reviewer concept](https://bigspyai.com/wp-content/uploads/connect-model-selection.png)
 
-```mermaid
-flowchart LR
-    PC["BigBoss popup<br/>Windows application"] <-->|"Chat and results"| BB["SAME BIGBOSS<br/>Shared permissions · Budgets · History"]
-    TG["Telegram<br/>Paired private chat"] <-->|"Requests and notifications"| BB
-    BB <--> TE["Task engine<br/>Mini Boss · Tasks · Cute Boss"]
-```
+API adapters cover **Kyma, OpenAI, Anthropic, Gemini, OpenRouter, Groq, Ollama Cloud** and compatible endpoints. Keys have separate Windows-encrypted stores. Connection checks determine readiness; actual models, quotas and billing depend on your account. A changed default does not silently reroute existing task connections.
 
-Telegram is planned as the first communication channel: send text requests, select projects, check progress, and receive results from a phone. Local execution requires the computer to be on, the Bigspy app or service to be running, and an Internet connection. Hiding BigBoss only hides the popup. Images, files, voice, group chats, and a 24/7 relay require separate specifications.
+**ChatGPT/Codex** and **Claude Code** plan previews use official CLIs and native sign-in. They do not imply every native tool or subscription feature is available. Grok Build/Antigravity bridges remain planned. Provider terms and account access need validation for your setup.
 
-BigBoss requires the installed Windows app and its native bridge. A standalone web or local HTML interface does not provide those capabilities.
+Model profiles combine provider metadata with observed task experience: review outcomes, corrections, latency, errors and tokens. Refresh model lists as catalogues change. Promotional metadata is one ranking input, not proof the cheapest model suits the work.
 
-### Add requirements while work is running
+Newer source offers **Low / Medium / High / Extra high / Max** effort levels, mapped to supported provider options. Tasks retain their choices; a Mini Boss suggestion does not override an explicit user setting. Unsupported levels may be reduced or omitted.
 
-New input is intended to be persisted and linked to the correct project and task before acknowledgement. Updates to the same work are applied at a safe checkpoint; unrelated work is routed to the appropriate task. Input within a task or dependent work stream follows arrival order, with explicit edits, replacements, and cancellations tracked by requirement version. Independent tasks may run concurrently within permitted limits.
+**Jev** is an experimental fast-decision layer with off/shadow/enabled modes, confidence gates, fallback and daily/monthly token controls. Public preview includes its options, but real protocol and effectiveness validation remain open. Synthetic evidence is not proof of real speed or cost savings.
 
-## Permissions, data, and resources
+## Telegram, resources and data
 
-| Control area | Intended design |
-| :--- | :--- |
-| **Connectors and models** | Publish actual capabilities, authentication methods, read/write permissions, connection health, and limits. Initial providers are still being selected. |
-| **External actions** | Check permissions and required approvals at execution time, and record an audit trail. |
-| **Secrets and data** | Use a secret store, limit outgoing data, define retention/deletion policies, and treat external content as data. |
-| **Budgets** | Limit tokens, cost, time, and correction rounds; distinguish estimates from provider-reported usage. |
-| **Local resources** | Monitor RAM, CPU, disk space, and GPU/VRAM when needed; regulate tasks and Bigspy-owned workers. |
-| **Task durability** | Support queues, checkpoints, timeouts, bounded retries, duplicate-write prevention, cancellation, and recovery. |
+Pair a dedicated bot in **Settings → Channels** or Big Boss **⋯**. Test it, create a one-time code, send **/pair** with that code in private chat and confirm user/chat IDs on desktop. Public preview supports project/task commands and text results. Newer source uses automatic Big Boss delegation and routes results back to the original paired channel.
 
-Local-first describes the intended execution and desktop experience. Backend distribution, storage, and the account model still need to be finalized. Data sent to AI providers or connectors is governed by granted permissions and policy.
+The PC, app and Internet must stay running. Hide only hides the popup. Telegram file/image/voice intake, richer delivery and a 24/7 relay remain planned. Remote input does not bypass desktop-only approvals.
 
-## Development roadmap
+![BIGSPY AI Connect Resource Guardian concept](https://bigspyai.com/wp-content/uploads/connect-local-control.png)
 
-The source repository roadmap is the authoritative progress tracker. The tables below summarize it for users. A completed design decision does not mean the corresponding feature has been built.
+Guardian reduces new-task concurrency under RAM pressure and pauses new work at critical RAM/disk thresholds. Recovery thresholds prevent rapid toggling. It does not cancel running work simply to free memory or stop unrelated apps. Cleanup is restricted to protected Bigspy-owned temporary data.
 
-| Phase | Focus | Progress gate |
-| :--- | :--- | :--- |
-| **0 · Specification** | MVP scope, roles, connectors, permissions, data, budgets, and acceptance criteria. | Verifiable decisions; the high-level agent structure is confirmed in **0.2**. |
-| **1 · Foundation** | Repository architecture, configuration, schemas, adapters, queues, and storage. | Validate execution, permissions, and recovery foundations. |
-| **2 · Orchestration** | BigBoss intake; Mini Boss assignment, feedback handling, and handoffs. | Traceable task flows with explicit states and limits. |
-| **3 · Review** | Cute Boss inspection, findings, and handoff summaries. | Evidence-based conclusions, with false positives and missed issues measured. |
-| **4 · Interface** | Progress, outputs, reviews, costs, permissions, settings, and language switching. | Users can observe and control their work. |
-| **5 · MVP validation** | End-to-end flows, failures, interruptions, and operating documentation. | Pass acceptance gates with at least one real connector. |
-| **6 · Self-improvement** | BigBoss prepares changes through branches, commits, and pull requests. | Begin after MVP stability, with quality checks, approval, and rollback. |
+Local-first keeps context and control on your machine. Cloud calls still send selected input, bounded history and review materials to configured providers. Browser content and attachments have scope/consent boundaries. Backups exclude API keys/tokens. Do not put secrets into shared knowledge or public reports.
 
-The **DT/NP** (Windows, popup, projects), **WS** (workspace), **TK** (tasks), **IN** (ongoing input), **RG** (local resources), **ST** (settings), and **TG** (Telegram text/private chat) work streams feed into the MVP according to the detailed roadmap.
+## Get started
 
-| Priority | Scope |
-| :--- | :--- |
-| **P0 · MVP** | End-to-end tasks, review and correction, one real connector, Windows desktop, workspace, and permission, cost, resource, and recovery gates. |
-| **P1 · After MVP** | A second connector of a different type, advanced monitoring/catalog features, and BigBoss self-improvement. |
-| **P2 · Expansion** | Additional connectors based on real demand; consider narrowly scoped auto-merge only after quality thresholds and rollback are established. |
+1. Open [public Windows downloads](https://github.com/bentarofficial/bigspy-ai-connect-release/releases/latest); choose **Setup** or **Portable**. Preview packages are unsigned.
+2. Launch the app, select language and create a project with a local workspace.
+3. Configure one AI connection and complete its inference check; checks may consume allowance.
+4. Create a small AI task and inspect its output, Cute Boss report and usage.
+5. Optionally pair Telegram and review concurrency, Guardian, backup and update settings.
 
-### Three acceptance journeys
+Installed apps update through **Settings → Updates** once task/input queues are clear. Portable builds update manually. Data is outside the install directory and project files remain separate.
 
-1. **Success:** request → BigBoss → Mini Boss → execution → output and Cute Boss report.
-2. **Correction:** Cute Boss finding → Mini Boss coordinates a fix → recheck → handoff.
-3. **Connection failure:** connector error or revoked permission → clear state → policy-driven handling and validation.
+## Development direction
 
-The first MVP release requires logs, artifacts, activity and token reports, permission and cost tests, recovery, and operating documentation. Connector support is measured by connectors that pass contract tests.
+~~~mermaid
+mindmap
+  root((BIGSPY AI Connect))
+    Context
+      Project and task history
+      Model and work profiles
+      Accepted knowledge board: planned
+    Coordination
+      Three-level conversations
+      Automatic delegation: newer source
+      Routed login and approvals: in development
+    Quality
+      Cute Boss text review
+      Bounded corrections
+      Browser evidence review: planned
+    Execution
+      Browser and user Terminal
+      Desktop materials: newer source
+      Guardian and recovery
+~~~
 
-## Follow the project
+| Next priority | Roadmap | Remaining work |
+| --- | --- | --- |
+| Automatic workflow acceptance | AUTO.1–4, UC.3/10 | Real connections/return delivery; multi-task synthesis (AUTO.5). |
+| Project browser and routed requests | AUTO.11/12, 2.6 | Shared project sign-in, login/approval at the place work was assigned. |
+| Usable inputs and outputs | AUTO.7/8/10/13, OUT/MI/TGF | Live image/clipboard tests, Telegram attachments/voice, diagrams and richer exports. |
+| Budget and quality | UC.13/15, JEV.1/7, 3.5 | Work-level monetary controls and measured review/decision effectiveness. |
+| Shared project knowledge | DS, PS.2/3 | Versioned accepted artifacts, dependencies, scoped cross-project access. |
+| Controlled self-improvement | Phase 6 | Branches/PRs, approval, regression checks and rollback. |
 
-This repository presents the product and distributes Windows installers and update metadata. Source code is maintained in a separate development repository. The MVP AI connector, account model, and some data contracts are still being finalized.
+These are development directions, not promises of availability in today's installer.
 
-- Review the [development roadmap](#development-roadmap) for planned scope.
-- Share suggestions or report problems through [GitHub Issues](https://github.com/bentarofficial/bigspy-ai-connect-release/issues), including the relevant roadmap area and expected outcome.
-- Follow [Releases](https://github.com/bentarofficial/bigspy-ai-connect-release/releases) for published, validated builds.
+## Feedback and support
+
+Report reproducible problems in [Issues](https://github.com/bentarofficial/bigspy-ai-connect-release/issues), or follow the [suggestion board](SUGGESTIONS.md). Settings → Suggestions lets you preview a redacted proposal before you choose to open GitHub and submit it yourself. Feedback is not uploaded silently.
+
+Include the app version, expected behavior, what happened and a minimal redacted example. Never publish API keys, bot tokens, private account details or raw task histories. For product and collaboration questions, visit [BIGSPY AI](https://bigspyai.com/contact/).
+
+## Frequently asked questions
+
+### Is this a browser service or an offline chatbot?
+
+It is a Windows desktop workspace. The website introduces the product; Big Boss needs the native bridge. Cloud models need connectivity. Local-first does not promise offline inference.
+
+### Does the downloaded app contain everything on main?
+
+No. Check public release notes and the capability matrix. Source implementations can still need live account/bot/machine acceptance and may not be packaged.
+
+### Can AI run arbitrary Terminal commands or edit all files?
+
+No general capability is promised. Terminal is user-controlled; automatic editing, broader permissions and Git self-improvement remain scoped roadmap work. Browser control follows release-specific boundaries.
+
+### Does independent review guarantee correctness or lower costs?
+
+No. Cute Boss makes checking visible but can miss errors or flag valid output. Profiles/Jev need measured acceptance; no universal savings are guaranteed.
+
+### Where do I report a problem or suggest an improvement?
+
+Use [public Issues](https://github.com/bentarofficial/bigspy-ai-connect-release/issues) and the [suggestion board](https://github.com/bentarofficial/bigspy-ai-connect-release/blob/main/SUGGESTIONS.md). Include version, expected/actual behavior and a redacted reproduction. Never share keys, tokens, raw personal history or private paths.
 
 ---
 
 <div align="center">
 
-**BIGSPY AI Connect**  
-From goals to results — with coordination, review, and evidence.
+**BIGSPY AI Connect — give the work a place, and the result a review trail.**
+
+[Website](https://bigspyai.com/bigspy-ai-connect/) · [Windows downloads](https://github.com/bentarofficial/bigspy-ai-connect-release/releases/latest) · [Contact](https://bigspyai.com/contact/)
 
 </div>
