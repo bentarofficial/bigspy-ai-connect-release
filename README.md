@@ -61,9 +61,9 @@ The product direction: explain the problem to **Big Boss**, let **Mini Boss** co
 | Provider API cards and official CLI plan previews | Included | Five effort levels and improved native model labels. |
 | Cute Boss text review, corrections and separate report | Included | Rich output rendering; full browser outcome review remains planned. |
 | Browser/Terminal tools per task | Included | Refined layouts, approved downloads and extension work; live acceptance varies. Terminal remains user-controlled. |
-| Task-operated Browser | Per-tab control switch; desktop input; up to 30 steps | Automatic assignment and project sign-in reuse in development (AUTO.11/12). |
+| Task-operated Browser | Per-tab control switch; desktop input; up to 30 steps | Automatic assignment and project sign-in reuse implemented in newer source (AUTO.11/12), awaiting live site/account acceptance. |
 | Model/work profiles; Jev options | Included; Jev off by default | Real protocol/effectiveness gates still open. No universal savings claim. |
-| Telegram private text and local results | Included | Same automatic Big Boss flow in source (AUTO.4); full live acceptance open. |
+| Telegram private text and local results | Included | Automatic Big Boss flow, photo/document intake and desktop-request notifications in newer source (AUTO.4/9); live bot acceptance open. |
 | Automatic Big Boss → Mini Boss → task delegation | Not in this public build | AUTO.1–3 implemented; up to four assignments per Mini Boss response. |
 | Linked website materials | Not in this public build | AUTO.7 extracts bounded public-page text for task and reviewer. |
 | Desktop files/images and formatted copy | Not in this public build | AUTO.8/10/13 implemented; model/clipboard acceptance open. |
@@ -112,6 +112,10 @@ English is the default UI, with **English / Tiếng Việt** in Settings. Agent 
 
 Newer source adds conversations at all three levels, a project-space drawer for outputs/folder browsing, and safe Markdown headings, tables, lists and code. Formatted Copy is intended for editors such as WordPress or Word; application-specific clipboard acceptance is still open.
 
+### Controlled Browser work
+
+Newer source can assign Browser work automatically, using one persistent browser profile per project. Tasks reuse that project sign-in while cross-project sessions stay separate. Login, approval and clarification requests appear where the work was assigned: Big Boss, Mini Boss or task. Only desktop decisions resume sensitive actions; Telegram announces the request. Password entry remains with the user. Live website/account acceptance is still open, including sites that restrict embedded browsers. Terminal automation and full Cute Boss Browser review remain planned.
+
 ### Bring materials into the work
 
 Newer source supports file selection, drag/drop and pasted images in desktop chats. Bounded extraction covers text/code, CSV/JSON/HTML, DOCX, XLSX, PPTX and text-bearing PDF. Images depend on the model/bridge. Inputs allow **up to six files, 10 MB per file**; unsupported vision models use available text with a notice.
@@ -134,9 +138,9 @@ Newer source offers **Low / Medium / High / Extra high / Max** effort levels, ma
 
 ## Telegram, resources and data
 
-Pair a dedicated bot in **Settings → Channels** or Big Boss **⋯**. Test it, create a one-time code, send **/pair** with that code in private chat and confirm user/chat IDs on desktop. Public preview supports project/task commands and text results. Newer source uses automatic Big Boss delegation and routes results back to the original paired channel.
+Pair a dedicated bot in **Settings → Channels** or Big Boss **⋯**. Test it, create a one-time code, send **/pair** with that code in private chat and confirm user/chat IDs on desktop. Public preview supports project/task commands and text results. Newer source adds automatic delegation, photo/document intake (up to 10 MB), album grouping and notifications when work needs a desktop login, approval or answer. Results return to the originating paired channel.
 
-The PC, app and Internet must stay running. Hide only hides the popup. Telegram file/image/voice intake, richer delivery and a 24/7 relay remain planned. Remote input does not bypass desktop-only approvals.
+The PC, app and Internet must stay running. Hide only hides the popup. Telegram voice, richer result delivery and a 24/7 relay remain planned. Remote input does not bypass desktop-only approvals.
 
 ![BIGSPY AI Connect Resource Guardian concept](https://bigspyai.com/wp-content/uploads/connect-local-control.png)
 
@@ -166,7 +170,7 @@ mindmap
     Coordination
       Three-level conversations
       Automatic delegation: newer source
-      Routed login and approvals: in development
+      Routed login and approvals: newer source
     Quality
       Cute Boss text review
       Bounded corrections
@@ -180,8 +184,8 @@ mindmap
 | Next priority | Roadmap | Remaining work |
 | --- | --- | --- |
 | Automatic workflow acceptance | AUTO.1–4, UC.3/10 | Real connections/return delivery; multi-task synthesis (AUTO.5). |
-| Project browser and routed requests | AUTO.11/12, 2.6 | Shared project sign-in, login/approval at the place work was assigned. |
-| Usable inputs and outputs | AUTO.7/8/10/13, OUT/MI/TGF | Live image/clipboard tests, Telegram attachments/voice, diagrams and richer exports. |
+| Project browser and routed requests | AUTO.11/12, 2.6 | Implemented in newer source; live websites and accounts still need acceptance. |
+| Usable inputs and outputs | AUTO.7/8/10/13, OUT/MI/TGF | Live desktop/Telegram attachment and clipboard tests, voice, diagrams and richer exports. |
 | Budget and quality | UC.13/15, JEV.1/7, 3.5 | Work-level monetary controls and measured review/decision effectiveness. |
 | Shared project knowledge | DS, PS.2/3 | Versioned accepted artifacts, dependencies, scoped cross-project access. |
 | Controlled self-improvement | Phase 6 | Branches/PRs, approval, regression checks and rollback. |
