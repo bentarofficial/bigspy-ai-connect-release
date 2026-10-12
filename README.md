@@ -20,7 +20,7 @@
 
 > **Status: desktop preview 0.1.11 — published.** Source development and public downloads have different scopes. The latest verified public build is **v0.1.11**. Newer source adds automatic delegation, desktop attachments, web materials and rich output; real-account acceptance remains open. Reviewed against the roadmap and public release notes on **2026-10-12**.
 
-**Explore:** [Why AI Connect](#why-ai-connect) · [Capabilities](#capability-matrix) · [AI team](#how-the-ai-team-works) · [Models](#connections-and-model-intelligence) · [Get started](#get-started) · [Roadmap](#development-direction) · [Development](#run-from-source) · [FAQ](#frequently-asked-questions)
+**Explore:** [Why AI Connect](#why-ai-connect) · [Capabilities](#capability-matrix) · [AI team](#how-the-ai-team-works) · [Models](#connections-and-model-intelligence) · [Get started](#get-started) · [Roadmap](#development-direction) · [Support](#feedback-and-support) · [FAQ](#frequently-asked-questions)
 
 ## Download and installation
 
