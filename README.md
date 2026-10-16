@@ -163,15 +163,15 @@ mindmap
       Accepted knowledge board: planned
     Coordination
       Three-level conversations
-      Automatic delegation: newer source
-      Routed login and approvals: newer source
+      Automatic delegation: v0.1.12
+      Routed login and approvals: v0.1.12
     Quality
       Reviewer text review
       Bounded corrections
-      Browser evidence review: planned
+      Browser evidence review: later source
     Execution
       Browser and user Terminal
-      Desktop materials: newer source
+      Desktop materials: v0.1.12
       Guardian and recovery
 ~~~
 
