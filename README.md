@@ -16,7 +16,7 @@
 
 </div>
 
-> **Status: desktop preview 0.1.12 — published.** The latest public build is **v0.1.12**; see its [release notes](https://github.com/bentarofficial/bigspy-ai-connect-release/releases/tag/v0.1.12) for scope. Real-account acceptance remains open.
+> **Status: desktop preview 0.1.13 — published.** The latest public build is **v0.1.13**; see its [release notes](https://github.com/bentarofficial/bigspy-ai-connect-release/releases/tag/v0.1.13) for scope. Real-account acceptance remains open.
 
 > **Role names:** Big Boss is the product’s signature assistant and your main point of contact. **Coordinator** (Điều phối) organizes the work; **Reviewer** (Kiểm tra chất lượng) checks the result in a separate review step. Resource Guardian keeps its name. Older installers and release notes may still show “Mini Boss” and “Cute Boss”; the source rename does not update an installed app.
 
@@ -25,13 +25,13 @@
 ## Download and installation
 
 <!-- release-downloads:start -->
-**Latest release: v0.1.12** — Windows x64 preview, unsigned · [Release notes](https://github.com/bentarofficial/bigspy-ai-connect-release/releases/tag/v0.1.12) · [All releases](https://github.com/bentarofficial/bigspy-ai-connect-release/releases)
+**Latest release: v0.1.13** — Windows x64 preview, unsigned · [Release notes](https://github.com/bentarofficial/bigspy-ai-connect-release/releases/tag/v0.1.13) · [All releases](https://github.com/bentarofficial/bigspy-ai-connect-release/releases)
 
 | Package | Download | Size | Usage |
 | :--- | :--- | :--- | :--- |
-| **Setup.exe** | [`BIGSPY-AI-Connect-0.1.12-x64-Setup.exe`](https://github.com/bentarofficial/bigspy-ai-connect-release/releases/download/v0.1.12/BIGSPY-AI-Connect-0.1.12-x64-Setup.exe) | 112.6 MB | Install the Windows application. Supports in-app updates (Settings → Updates). |
+| **Setup.exe** | [`BIGSPY-AI-Connect-0.1.13-x64-Setup.exe`](https://github.com/bentarofficial/bigspy-ai-connect-release/releases/download/v0.1.13/BIGSPY-AI-Connect-0.1.13-x64-Setup.exe) | 118.1 MB | Install the Windows application. Supports in-app updates (Settings → Updates). |
 
-SHA-256 — Setup: `2345148c8a55831e89e18293bd67e086c11147f3e71411371ce9dd726a930a2c`
+SHA-256 — Setup: `cb03b2af69bab7212e6b2cd8a22a842a3f6deeccb735dd69e00a16f47e5fb5e4`
 <!-- release-downloads:end -->
 
 Install with Setup; updates arrive inside the app. Application data remains outside the install directory. Read the release-specific scope before relying on a tool. This repository distributes builds and public product information; source development is maintained separately.
